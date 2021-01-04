@@ -1,0 +1,7 @@
+# Default ignored files
+venv/
+node_modules/
+.idea/
+*.pyc
+__pycache__
+*.db
