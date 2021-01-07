@@ -7,17 +7,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <title>{% block meta_title %}{% endblock %}</title>
     {% block cssblock %}
     {% endblock %}
 </head>
 <body>
 {% include 'homepage/header.html' %}
 
+<main role="main">
 {% block content %}
 {% endblock %}
+</main>
 
 {% include 'homepage/footer.html' %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
 {% block jsblock %}
 {% endblock %}
 </body>

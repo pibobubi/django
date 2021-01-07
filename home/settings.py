@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'user',
+    'blog.apps.BlogConfig',
+    'user.apps.UserConfig',
     'core',
 ]
 
@@ -133,3 +133,13 @@ AUTH_USER_MODEL = 'user.Customeruser'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_URL = '/login/'
+
+try:
+    from home.local_setting import *
+except ImportError:
+    pass

@@ -1,1 +1,16 @@
 {% extends 'homepage/base.html' %}
+{% block meta_title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for post in latest_post_list %}
+        <div class="col-md-4 mt-3">
+            <img class="card-img-top shadow-sm mb-2" src="{{ post.pictrue.url }}" alt="">
+            <h2>{{post.title}}</h2>
+            <p>{{post.content}}</p>
+            <p><a class="btn btn-secondary" href="/post/{{post.slug}}" role="button">View details »</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
